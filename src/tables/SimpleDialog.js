@@ -24,3 +24,5 @@ export const SimpleDialog = props => {
     />
   );
 };
+
+export default SimpleDialog;
