@@ -1,7 +1,7 @@
 {
-  "name": "neza-react-forms",
+  "name": "neza-react-tables",
   "version": "1.0.22",
-  "description": "Forms",
+  "description": "Tables",
   "author": "ezrankayamba",
   "license": "MIT",
   "main": "dist/index.js",
@@ -23,7 +23,8 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.0.0",
+    "neza-react-forms": "^1.0.24"
   },
   "devDependencies": {
     "microbundle-crl": "^0.13.8",

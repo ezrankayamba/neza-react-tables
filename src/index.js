@@ -1,1 +1,2 @@
-export { default as CommonForm } from "./forms/CommonForm";
+export { default as CrudTable } from "./tables/CrudTable";
+export { default as BasicCrudView } from "./tables/BasicCrudView";
