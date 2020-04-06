@@ -1,7 +1,7 @@
 import React from "react";
 import Pagination from "./Pagination";
 import LoadingIndicator from "./LoadingIndicator";
-import CloseableModel from "neza-react-forms";
+import { CloseableModel } from "neza-react-forms";
 import { IconPlus } from "./Incons";
 
 class CrudTable extends React.Component {
