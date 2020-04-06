@@ -1,5 +1,5 @@
 import React from "react";
-import Modal from "neza-react-forms";
+import { Modal } from "neza-react-forms";
 
 export const SimpleDialog = props => {
   const { title, description, open, handleClose, handleOk } = props;
