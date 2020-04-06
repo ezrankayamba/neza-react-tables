@@ -41,7 +41,6 @@ class CrudTable extends React.Component {
       ],
       onSubmit: newRecord && newRecord.onAdd
     };
-    console.log("Test");
     return (
       <div className="bg-light p-2">
         {newRecord && (
