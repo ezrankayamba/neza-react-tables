@@ -51,6 +51,6 @@
     "dist"
   ],
   "dependencies": {
-    "neza-react-forms": "^1.0.25"
+    "neza-react-forms": "^1.0.26"
   }
 }
