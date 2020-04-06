@@ -1,7 +1,7 @@
 {
   "name": "neza-react-tables",
   "version": "1.0.24",
-  "description": "Tables",
+  "description": "React tables",
   "author": "ezrankayamba",
   "license": "MIT",
   "main": "dist/index.js",
