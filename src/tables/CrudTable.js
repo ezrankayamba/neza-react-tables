@@ -106,5 +106,4 @@ class CrudTable extends React.Component {
     );
   }
 }
-
 export default CrudTable;
