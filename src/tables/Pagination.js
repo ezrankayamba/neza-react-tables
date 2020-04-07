@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { IconFirst, IconLast, IconNext, IconPrev } from "./Incons";
 
 class Pagination extends Component {
@@ -14,7 +14,7 @@ class Pagination extends Component {
       <div className="pagination mt-2">
         <div className="btn-group">
           {pageNo > 1 && (
-            <>
+            <div>
               <button
                 className="btn btn-sm btn-outline-secondary"
                 onClick={() => onPageChange(1)}
@@ -27,7 +27,7 @@ class Pagination extends Component {
               >
                 <IconPrev />
               </button>
-            </>
+            </div>
           )}
           {pList.map(p => (
             <button
@@ -41,7 +41,7 @@ class Pagination extends Component {
             </button>
           ))}
           {pageNo !== pages && (
-            <>
+            <div>
               <button
                 className="btn btn-sm btn-outline-secondary"
                 onClick={() => onPageChange(pageNo + 1)}
@@ -54,7 +54,7 @@ class Pagination extends Component {
               >
                 <IconLast />
               </button>
-            </>
+            </div>
           )}
         </div>
       </div>
