@@ -1,12 +1,9 @@
 import React from "react";
 
-import { CommonForm } from "neza-react-forms";
+import { Pagination } from "neza-react-tables";
 
 const App = () => {
-  const form = {
-    fields: [{ field: "username" }]
-  };
-  return <CommonForm meta={form} />;
+  return <Pagination />;
 };
 
 export default App;
