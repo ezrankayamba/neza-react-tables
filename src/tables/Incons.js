@@ -7,16 +7,16 @@ export const IconTrash = () => (
 );
 export const IconHome = () => <i className="icon ion-ios-home-outline"></i>;
 export const IconFirst = () => (
-  <>
+  <span>
     |<i className="icon ion-ios-arrow-back"></i>
-  </>
+  </span>
 );
 export const IconPrev = () => <i className="icon ion-ios-arrow-back"></i>;
 export const IconNext = () => <i className="icon ion-ios-arrow-right"></i>;
 export const IconLast = () => (
-  <>
+  <span>
     <i className="icon ion-ios-arrow-right"></i>|
-  </>
+  </span>
 );
 export const IconPayment = () => <i className="icon ion-card"></i>;
 export const IconClient = () => (
