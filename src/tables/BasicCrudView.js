@@ -27,7 +27,7 @@ class BasicCrudView extends React.Component {
   }
 
   render() {
-    const { headers, records, title } = this.props.data;
+    const { headers, records, title, onSearch } = this.props.data;
     const { isLoading, onRowClick, pagination } = this.props;
     const { open } = this.state;
     let options = this.props.options ? this.props.options : {};
@@ -45,6 +45,7 @@ class BasicCrudView extends React.Component {
             ...options
           }}
           onRowClick={onRowClick}
+          onSearch={onSearch}
         />
         <SimpleDialog
           open={open}

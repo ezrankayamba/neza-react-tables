@@ -1,7 +1,7 @@
 import React from "react";
 import Pagination from "./Pagination";
 import LoadingIndicator from "./LoadingIndicator";
-import { CloseableModal } from "neza-react-forms";
+import { CloseableModal, SearchForm } from "neza-react-forms";
 import { IconPlus } from "./Incons";
 
 class CrudTable extends React.Component {
@@ -16,7 +16,8 @@ class CrudTable extends React.Component {
       onRowClick,
       isLoading,
       newRecord,
-      pagination
+      pagination,
+      onSearch
     } = this.props;
     let pages = 1,
       pageNo = 1,
@@ -41,8 +42,12 @@ class CrudTable extends React.Component {
       ],
       onSubmit: newRecord && newRecord.onAdd
     };
+    const searchFields = columns.filter(c => c.search);
     return (
       <div className="bg-light p-2">
+        {searchFields.length > 0 && (
+          <SearchForm onSearch={onSearch} searchFields={searchFields} />
+        )}
         {newRecord && (
           <button
             className="btn btn-sm btn-link float-right"
@@ -51,34 +56,36 @@ class CrudTable extends React.Component {
             <IconPlus />
           </button>
         )}
-        <table className="table table-sm table-hover table-bordered mb-0">
-          <thead className="border-none">
-            <tr className="border-none">
-              {columns
-                .filter(col => !col.hide)
-                .map(col => (
-                  <th key={col.field}>{col.title}</th>
-                ))}
-            </tr>
-          </thead>
-          <tbody>
-            {data.map(row => (
-              <tr
-                onClick={onRowClick ? e => onRowClick(e, row) : null}
-                key={row.id}
-                className="border-none"
-              >
+        <div className="table-scrollable">
+          <table className="table table-sm table-hover table-bordered mb-0">
+            <thead className="border-none">
+              <tr className="border-none">
                 {columns
                   .filter(col => !col.hide)
                   .map(col => (
-                    <td className="p-1" key={col.field}>
-                      {col.render ? col.render(row) : row[col.field]}
-                    </td>
+                    <th key={col.field}>{col.title}</th>
                   ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {data.map(row => (
+                <tr
+                  onClick={onRowClick ? e => onRowClick(e, row) : null}
+                  key={row.id}
+                  className="border-none"
+                >
+                  {columns
+                    .filter(col => !col.hide)
+                    .map(col => (
+                      <td className="p-1" key={col.field}>
+                        {col.render ? col.render(row) : row[col.field]}
+                      </td>
+                    ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <LoadingIndicator isLoading={isLoading} />
         {pages > 1 && (
           <Pagination
